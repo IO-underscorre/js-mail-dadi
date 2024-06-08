@@ -30,7 +30,7 @@
     color: #ffc100;
 }
 
-form {
+#log-form {
     display: block;
     width: 100%;
     display: flex;
