@@ -129,3 +129,26 @@
     background-color: #3c3c3c;
     color: #f5f5f5;
 }
+
+
+#output {
+    text-align: center;
+}
+
+#output strong {
+    display: block;
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+#output .granted {
+    color: #157a6e;
+}
+
+#output .denied {
+    color: #ff0022;
+}
+
+#output span {
+    color: #f5f5f5;
+}
