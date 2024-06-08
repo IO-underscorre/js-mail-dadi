@@ -17,7 +17,7 @@ logForm.addEventListener('submit' ,
         if (isInTheList === false) {
             document.getElementById('output').innerHTML = `<strong class="denied">ACCESS DENIED</strong><p>Sorry, <span>${userEmail}</span> does not correspond to any of the emails authorized to access this document!</p>`;
         } else {
-            document.getElementById('output').innerHTML = `<strong class="granted">ACCESS GRANTED</strong><p>Hi <span>${userEmail}</span>, you are authorized to access this document!</p>`;
+            document.getElementById('output').innerHTML = `<strong class="granted">ACCESS GRANTED</strong><p>Hello, <span>${userEmail}</span> is authorized to access this document!</p>`;
         }
     }
 );
