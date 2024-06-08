@@ -11,7 +11,7 @@ logForm.addEventListener('submit' ,
         
         // Confront the inputed mail address with every mail address in the list
         for (let i = 0 ; i < allowedMails.length && isInTheList === false ; i++) {
-            allowedMails[i] === userEmail ? isInTheList = true : none;
+            allowedMails[i] === userEmail ? isInTheList = true : null;
         }
         
         isInTheList === false ? document.getElementById('output').innerHTML = `<strong class="denied">ACCESS DENIED</strong><p>Sorry, <span>${userEmail}</span> does not correspond to any of the emails authorized to access this document!</p>` : document.getElementById('output').innerHTML = `<strong class="granted">ACCESS GRANTED</strong><p>Hello, <span>${userEmail}</span> is authorized to access this document!</p>`;
