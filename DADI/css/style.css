@@ -3,6 +3,14 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     --table-border-size: 50px;
+    --table-wood-color: #36160b;
+    --table-mat-color: #019062;
+    --table-mat-prints-color: #ffffff;
+    --dice-dots-color: #ffffff;
+    --player-dice-color: #0d1db1;
+    --cpu-dice-color: #aa0000;
+    --chip-primary-color: #d3be00;
+    --chip-secondary-color: #474747;
 }
 
 * {
@@ -13,7 +21,7 @@
 
 body {
     text-align: center;
-    color: #ffffff;
+    color: var(--table-mat-prints-color);
 }
 
 
@@ -25,7 +33,7 @@ body {
 }
 
 .green {
-    background-color: #019062;
+    background-color: var(--table-mat-color);
     box-shadow: inset 0 0 15px 10px #00000080;
     border-radius: 30px;
     width: 100%;
@@ -41,11 +49,151 @@ body {
 
 h1 {
     font-size: 4rem;
+    line-height: 1;
+    margin: 1.5rem 0;
 }
 
 .game-area {
-    border: .5rem dashed #ffffff;
+    border: .5rem dashed var(--table-mat-prints-color);
     border-radius: 30px;
     width: 500px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Upper game area with dices */
+.dices-area {
+    border-bottom: .5rem dashed var(--table-mat-prints-color);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Dice area */
+.dice-area {
+    flex-basis: calc(50% - .25rem);
+    position: relative;
+    padding: 1rem 0 4rem;
+}
+
+.dice-area.cpu {
+    flex-basis: calc(50% + .25rem);
+    border-left: .5rem dashed var(--table-mat-prints-color);
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+/* Dices */
+.dice {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 50px;
+    aspect-ratio: 1 / 1;
+    padding: 5px;
     margin: 0 auto;
+    overflow: hidden;
+    border-radius: 5%;
+    box-shadow: 0 0 15px #00000080;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);  
+    grid-template-rows: repeat(3 , 1fr);  
+    align-items: center;
+    justify-items: center;
+    grid-template-areas:
+    "lt . rt"
+    "lm mm rm"
+    "lb . rb";
+}
+
+.player > .dice {
+    background-color: #0d1db1;
+}
+
+.cpu > .dice {
+    background-color: #aa0000;
+}
+
+.dice * {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: var(--dice-dots-color);
+}
+
+/* Chip style button */
+#chip-btn {
+    margin: 2rem 0;
+    appearance: none;
+    color: var(--chip-secondary-color);
+    font-weight: 800;
+    border-radius: 10px;
+    border: 1px solid var(--chip-secondary-color);
+    background-color: var(--chip-primary-color);
+    overflow: hidden;
+    box-shadow: 0 0 5px #00000080;
+    cursor: pointer;
+}
+
+#chip-btn:hover {
+    filter: brightness(105%) blur(.25px);
+    box-shadow: 0 0 20px #00000080;
+}
+
+#chip-btn:active {
+    filter: brightness(100%) blur(0);
+    box-shadow: 0 0 5px #00000080;
+}
+
+#chip-btn > div , #chip-btn > div > div {
+    border: 5px dashed var(--chip-secondary-color);
+}
+
+#chip-btn > div {
+    padding: 15px;
+    font-weight: 600;
+}
+
+#chip-btn > div > div {
+    padding: 5px 30px;
+    border-radius: 5px;
+}
+
+/* JavaScript output text */
+#text-container {
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+}
+
+
+
+@media all and (max-width: 768px) {
+    :root {
+        --table-border-size: 25px;
+    }
+    
+    .page-wrapper {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+        margin: .75rem 0;
+    }
+
+    .game-area {
+        width: 200px;
+        margin-bottom: .75rem;
+    }
+
+    .dice-area {
+        flex-basis: 100%;
+    }
+    
+    .dice-area.cpu {
+        flex-basis: 100%;
+        border-left: none;
+        border-top: .5rem dashed var(--table-mat-prints-color);
+    }
 }
