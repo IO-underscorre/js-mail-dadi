@@ -1,10 +1,51 @@
 :root {
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    --table-border-size: 50px;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    color: #ffffff;
+}
+
+
+.page-wrapper {
+    background-color: #36160b;
+    width: 100%;
+    height: 100vh;
+    padding: var(--table-border-size);
+}
+
+.green {
+    background-color: #019062;
+    box-shadow: inset 0 0 15px 10px #00000080;
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.green > div {
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.game-area {
+    border: .5rem dashed #ffffff;
+    border-radius: 30px;
+    width: 500px;
+    margin: 0 auto;
 }
