@@ -4,14 +4,16 @@ const scores = [];
 chipBtn.addEventListener('click' , 
     function ()  {
         for(i = 0 ; i < 2 ; i++) {
+            // Assigns a random number from 1 to 6 to a dice
             scores[i] = Math.floor(Math.random() * 6) + 1;
             
+            // Write the number on the html dice element
             switch(scores[i]) {
                 case 1:
                     document.getElementsByClassName('dice')[i].innerHTML = '<div style="grid-area: mm;"></div>';
                     break;
                 case 2:
-                    document.getElementsByClassName('dice')[i].innerHTML = '<div style="grid-area: lt;">' + '</div><div style="grid-area: rb;"></div>';
+                    document.getElementsByClassName('dice')[i].innerHTML = '<div style="grid-area: lt;</div>">' + '<div style="grid-area: rb;"></div>';
                     break;
                 case 3:
                     document.getElementsByClassName('dice')[i].innerHTML = '<div style="grid-area: lb;"></div>' + '<div style="grid-area: mm;"></div>' + '<div style="grid-area: rt;"></div>';
@@ -27,6 +29,7 @@ chipBtn.addEventListener('click' ,
             }
         }
 
+        // Calculate what's the higher dice number
         if (scores[0] !== scores[1]) {
             scores[0] > scores[1] ? document.getElementById('text-container').innerHTML = '<b>You won</b>, congratulations! If you want to play again roll the dices!': document.getElementById('text-container').innerHTML = '<b>You lost</b>, sorry! If you want to play again roll the dices!';
         } else {

@@ -122,6 +122,8 @@ h2 {
     background-color: var(--dice-dots-color);
 }
 
+
+/* Bottom game area with chip and text */
 /* Chip style button */
 #chip-btn {
     margin: 2rem 0;
