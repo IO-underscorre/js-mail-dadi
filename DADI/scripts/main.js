@@ -13,7 +13,7 @@ chipBtn.addEventListener('click' ,
                     document.getElementsByClassName('dice')[i].innerHTML = '<div style="grid-area: mm;"></div>';
                     break;
                 case 2:
-                    document.getElementsByClassName('dice')[i].innerHTML = '<div style="grid-area: lt;</div>">' + '<div style="grid-area: rb;"></div>';
+                    document.getElementsByClassName('dice')[i].innerHTML = '<div style="grid-area: lt;"></div>' + '<div style="grid-area: rb;"></div>';
                     break;
                 case 3:
                     document.getElementsByClassName('dice')[i].innerHTML = '<div style="grid-area: lb;"></div>' + '<div style="grid-area: mm;"></div>' + '<div style="grid-area: rt;"></div>';
