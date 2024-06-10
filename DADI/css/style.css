@@ -166,6 +166,7 @@ h2 {
 #text-container {
     padding: 0 2rem;
     margin-bottom: 2rem;
+    min-height: 3.25rem;
 }
 
 
@@ -197,5 +198,9 @@ h2 {
         flex-basis: 100%;
         border-left: none;
         border-top: .5rem dashed var(--table-mat-prints-color);
+    }
+
+    #text-container {
+        min-height: 11.5rem;
     }
 }
